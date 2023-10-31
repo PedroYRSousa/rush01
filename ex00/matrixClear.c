@@ -1,6 +1,6 @@
 #include "matrix.h"
 
-void matrixClear(int ***matrix)
+void matrixClear(t_matrix ***matrix)
 {
 	int x;
 

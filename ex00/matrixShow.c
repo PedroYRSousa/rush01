@@ -1,10 +1,10 @@
 #include "matrix.h"
 
-static char intToChar(int i)
+static char intToChar(t_matrix matrix)
 {
-	return i + '0';
+	return matrix.value + '0';
 }
-void matrixShow(int **matrix)
+void matrixShow(t_matrix **matrix)
 {
 	int x;
 	int y;
