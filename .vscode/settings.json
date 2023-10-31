@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.json": "json",
+    "*.js": "javascript",
+    "stdio.h": "c",
+    "unistd.h": "c",
+    "stdlib.h": "c",
+    "ref.h": "c",
+    "map.h": "c",
+    "error.h": "c",
+    "array.h": "c"
+  }
+}
