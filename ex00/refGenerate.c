@@ -4,13 +4,14 @@ static int isDigit(char c)
 {
 	return (c >= '0' && c <= '9');
 }
-static char charToInt(int i)
+static int charToInt(char i)
 {
 	return i - '0';
 }
-static void *showError(int **ref) {
+static void *showError(int **ref)
+{
 	error();
-	refClear(ref);
+	arrayClear(ref);
 	return NULL;
 }
 static int isValidInput(char c)
@@ -24,7 +25,7 @@ static int isValidInput(char c)
 		return FALSE;
 	if (isDigit(c) == TRUE)
 		size++;
-	if (size > MAP_SIZE * MAP_SIZE)
+	if (size > MATRIX_SIZE * MATRIX_SIZE)
 		return FALSE;
 
 	mustBeSpace = !mustBeSpace;
@@ -36,7 +37,7 @@ int *refGenerate(int argc, char **argv)
 	int *ref;
 	int index;
 
-	ref = refAlloc(REF_SIZE);
+	ref = arrayAlloc();
 	if (argc != 2)
 		return showError(&ref);
 
