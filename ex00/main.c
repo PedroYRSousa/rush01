@@ -6,14 +6,14 @@
 
 #include "ref.h"
 
-static void init(int **ref, int ***map, int argc, char **argv)
+static void init(int **ref, t_matrix ***map, int argc, char **argv)
 {
 	*(ref) = refGenerate(argc, argv);
 	if (*ref != NULL)
 		(*map) = matrixAlloc();
 
 }
-static void loop(int **ref, int ***map)
+static void loop(int **ref, t_matrix ***map)
 {
 	if (*ref == NULL) return;
 	if (*map == NULL) return;
@@ -21,7 +21,7 @@ static void loop(int **ref, int ***map)
 	arrayShow(*ref);
 	matrixShow(*map);
 }
-static void clear(int **ref, int ***map)
+static void clear(int **ref, t_matrix ***map)
 {
 	if (*ref != NULL)
 		arrayClear(ref);
@@ -32,7 +32,7 @@ static void clear(int **ref, int ***map)
 int main(int argc, char **argv)
 {
 	int *ref;
-	int **map;
+	t_matrix **map;
 
 	ref = NULL;
 	init(&ref, &map, argc, argv);
